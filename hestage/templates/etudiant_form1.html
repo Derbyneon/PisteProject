@@ -1,0 +1,16 @@
+from flask import Flask, request, redirect
+
+app = Flask(__name__)
+
+# Route pour la page "supprimer-etudiant"
+@app.route('/supprimer-etudiant', methods=['POST'])
+def supprimer_etudiant():
+    # Récupérer l'ID de l'étudiant à supprimer à partir des données du formulaire
+    id_etud = request.form['id_etud']
+
+    # Supprimer l'étudiant correspondant de la base de données
+    # (remplacez cette ligne par votre code pour supprimer l'étudiant de la base de données)
+    db.supprimer_etudiant(id_etud)
+
+    # Rediriger l'utilisateur vers la page d'accueil
+    return redirect('/')
